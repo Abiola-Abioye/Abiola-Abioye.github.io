@@ -1,176 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abiola Abioye | Data Analytics Portfolio</title>
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --accent: #18bc9c;
-            --light: #f8f9fa;
-            --dark: #333333;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: var(--primary);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { margin: 0.5rem 0 0 0; font-size: 1.2rem; color: #ecf0f1; }
-        
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 2rem;
-        }
-        
-        section { margin-bottom: 3rem; }
-        h2 { border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; color: var(--primary); }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        .skill-card {
-            background: var(--light);
-            padding: 1.5rem;
-            border-radius: 6px;
-            border-left: 4px solid var(--accent);
-        }
-        .skill-card h3 { margin-top: 0; color: var(--primary); }
-        
-        .project-card {
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .project-tags { margin: 0.5rem 0; }
-        .tag {
-            background: #e8f8f5;
-            color: var(--accent);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            transition: background 0.2s;
-        }
-        .btn:hover { background: var(--accent); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abiola Abioye | Data Analytics Portfolio</title>
+<style>
+:root {
+--primary: #2c3e50;
+--accent: #18bc9c;
+--light: #f8f9fa;
+--dark: #333333;
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.6;
+color: var(--dark);
+margin: 0;
+padding: 0;
+}
+header {
+background: var(--primary);
+color: white;
+padding: 3rem 2rem;
+text-align: center;
+}
+header h1 { margin: 0; font-size: 2.5rem; }
+header p { margin: 0.5rem 0 0 0; font-size: 1.2rem; color: #ecf0f1; }
+.container {
+max-width: 1000px;
+margin: auto;
+padding: 2rem;
+}
+section { margin-bottom: 3rem; }
+h2 { border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; color: var(--primary); }
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
+margin-top: 1rem;
+}
+.skill-card {
+background: var(--light);
+padding: 1.5rem;
+border-radius: 6px;
+border-left: 4px solid var(--accent);
+}
+.skill-card h3 { margin-top: 0; color: var(--primary); }
+.project-card {
+background: white;
+border: 1px solid #e0e0e0;
+border-radius: 8px;
+padding: 2rem;
+margin-bottom: 2rem;
+box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.project-tags { margin: 0.5rem 0; }
+.tag {
+background: #e8f8f5;
+color: var(--accent);
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.85rem;
+font-weight: bold;
+margin-right: 0.5rem;
+}
+.btn {
+display: inline-block;
+background: var(--primary);
+color: white;
+text-decoration: none;
+padding: 0.5rem 1rem;
+border-radius: 4px;
+font-size: 0.9rem;
+margin-top: 1rem;
+transition: background 0.2s;
+}
+.btn:hover { background: var(--accent); }
+</style>
 </head>
 <body>
-
-    <header>
-        <h1>Abiola Abioye</h1>
-        <p>Data Analyst | Transforming Complex Datasets into Actionable Insights</p>
-    </header>
-
-    <div class="container">
-        
-        <section id="about">
-            <h2>About My Journey</h2>
-            <p>Welcome to my data analytics project showcase. I specialize in bridging the gap between raw data complexity and clear business strategy. This timeline captures my technical progression, analytical builds, and practical implementations as I navigate my data analytics journey.</p>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Core</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Data Modeling & Analytics</h3>
-                    <p>SQL, Python, Advanced Data Modeling, ETL Workflows</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Visualization & BI</h3>
-                    <p>Power BI (DAX, Interactive Dashboards), Advanced Reporting</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Risk & Compliance</h3>
-                    <p>Corporate Risk Assessment, Internal Controls, Control Environment Optimization</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Project Journey</h2>
-            
-           <div class="project-card" style="border: 1px solid #e1e4e8; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; background-color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-    <h3 style="color: #1e293b; margin-top: 0; font-family: inherit;">Retail Inventory Automation & Markdown Optimization</h3>
-    
-    <div class="project-tags" style="margin-bottom: 1.5rem;">
-        <span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Data Modeling</span>
-        <span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Python(pandas/numpy)</span>
-        <span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Power BI</span>
-        <span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; font-family: inherit;">DAX Framework</span>
-    </div>
-    
-    <p style="color: #475569; font-family: inherit;">
-        <strong>The Business Problem:</strong> Frontline retail teams routinely execute manual shelf-rotation checklists to catch expiring inventory. This process is time-intensive, prone to human oversight, and often collides with peak front-end checkout traffic, leading to lost productivity and increased waste (shrinkage).
-    </p>
-    
-    <p style="color: #475569; font-family: inherit;">
-        <strong>The Solution:</strong> Deployed a priority-driven, exception-based inventory tracking model. Engineered a custom 3-month retail transactional dataset using Python (<code style="background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace;">pandas</code>, <code style="background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace;">numpy</code>) and architected a highly scalable, normalized Star Schema database inside Power BI by abstracting a unique batch lookup dimension to break complex routing loops.
-    </p>
-
-    <div class="project-visuals" style="margin: 1.5rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-family: inherit;">
-        <div>
-            <h5 style="margin: 0 0 0.5rem 0; color: #64748b; font-family: inherit;">Relational Star Schema</h5>
-            <img src="https://raw.githubusercontent.com/Abiola-Abioye/retail-rotation-optimization/main/schema.png" alt="Star Schema Architecture" style="width: 100%; border-radius: 6px; border: 1px solid #cbd5e1;">
-        </div>
-        <div>
-            <h5 style="margin: 0 0 0.5rem 0; color: #64748b; font-family: inherit;">Automated Operations UI</h5>
-            <img src="https://raw.githubusercontent.com/Abiola-Abioye/retail-rotation-optimization/main/dashboard.png" alt="Power BI Dashboard Picklist" style="width: 100%; border-radius: 6px; border: 1px solid #cbd5e1;">
-        </div>
-    </div>
-    
-    <p style="color: #475569; font-family: inherit;">
-        <strong>Strategic Impact:</strong> Completely replaces blind manual scanning with a predictive, targeted markdown picklist. By implementing automated time-intelligence thresholds, the dashboard surfaces high-risk stock and applies a tier-decay markdown strategy (25%, 50%, 75%) to maximize product salvage recovery while freeing up labor hours for high-traffic customer waves.
-    </p>
-    
-    <div style="margin-top: 1.5rem;">
-        <a href="https://github.com/Abiola-Abioye/retail-rotation-optimization" target="_blank" class="btn" style="display: inline-block; background: #0f172a; color: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 0.9rem; margin-right: 1rem; font-family: inherit;">View Repository Source</a>
-    </div>
+<header>
+<h1>Abiola Abioye</h1>
+<p>Data Analyst | Transforming Complex Datasets into Actionable Insights</p>
+</header>
+<div class="container">
+<section id="about">
+<h2>About My Journey</h2>
+<p>Welcome to my data analytics project showcase. I specialize in bridging the gap between raw data complexity and clear business strategy. This timeline captures my technical progression, analytical builds, and practical implementations as I navigate my data analytics journey.</p>
+</section>
+<section id="skills">
+<h2>Technical Core</h2>
+<div class="skills-grid">
+<div class="skill-card">
+<h3>Data Modeling & Analytics</h3>
+<p>SQL, Python, Advanced Data Modeling, ETL Workflows</p>
 </div>
-            <div class="project-card">
-                <h3>Featured Project Title</h3>
-                <div class="project-tags">
-                    <span class="tag">Power BI</span>
-                    <span class="tag">DAX</span>
-                    <span class="tag">Data Modeling</span>
-                </div>
-                <p><strong>Business Problem:</strong> Brief description of the organizational challenge or analytical objective you set out to address.</p>
-                <p><strong>Analytical Solution:</strong> Overview of how you cleaned, structured, and modeled the data to isolate relevant insights.</p>
-                <p><strong>Strategic Impact:</strong> The key business findings or process improvements uncovered by the final analysis.</p>
-                <a href="#" class="btn">View Interactive Dashboard</a>
-                <a href="#" class="btn" style="background:#7f8c8d;">View Source Code</a>
-            </div>
-
-        </section>
-        
-    </div>
-
+<div class="skill-card">
+<h3>Visualization & BI</h3>
+<p>Power BI (DAX, Interactive Dashboards), Advanced Reporting</p>
+</div>
+<div class="skill-card">
+<h3>Risk & Compliance</h3>
+<p>Corporate Risk Assessment, Internal Controls, Control Environment Optimization</p>
+</div>
+</div>
+</section>
+<section id="projects">
+<h2>Project Journey</h2>
+<div class="project-card" style="border: 1px solid #e1e4e8; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; background-color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+<h3 style="color: #1e293b; margin-top: 0; font-family: inherit;">Retail Inventory Automation & Markdown Optimization</h3>
+<div class="project-tags" style="margin-bottom: 1.5rem;">
+<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Data Modeling</span>
+<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Python(pandas/numpy)</span>
+<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Power BI</span>
+<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; font-family: inherit;">DAX Framework</span>
+</div>
+<p style="color: #475569; font-family: inherit;">
+<strong>The Business Problem:</strong> Frontline retail teams routinely execute manual shelf-rotation checklists to catch expiring inventory. This process is time-intensive, prone to human oversight, and often collides with peak front-end checkout traffic, leading to lost productivity and increased waste (shrinkage).
+</p>
+<p style="color: #475569; font-family: inherit;">
+<strong>The Solution:</strong> Deployed a priority-driven, exception-based inventory tracking model. Engineered a custom 3-month retail transactional dataset using Python (<code style="background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace;">pandas</code>, <code style="background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace;">numpy</code>) and architected a highly scalable, normalized Star Schema database inside Power BI by abstracting a unique batch lookup dimension to break complex routing loops.
+</p>
+<div class="project-visuals" style="margin: 1.5rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-family: inherit;">
+<div>
+<h5 style="margin: 0 0 0.5rem 0; color: #64748b; font-family: inherit;">Relational Star Schema</h5>
+<img src="https://raw.githubusercontent.com/Abiola-Abioye/retail-rotation-optimization/main/schema.png" alt="Star Schema Architecture" style="width: 100%; border-radius: 6px; border: 1px solid #cbd5e1;">
+</div>
+<div>
+<h5 style="margin: 0 0 0.5rem 0; color: #64748b; font-family: inherit;">Automated Operations UI</h5>
+<img src="https://raw.githubusercontent.com/Abiola-Abioye/retail-rotation-optimization/main/dashboard.png" alt="Power BI Dashboard Picklist" style="width: 100%; border-radius: 6px; border: 1px solid #cbd5e1;">
+</div>
+</div>
+<p style="color: #475569; font-family: inherit;">
+<strong>Strategic Impact:</strong> Completely replaces blind manual scanning with a predictive, targeted markdown picklist. By implementing automated time-intelligence thresholds, the dashboard surfaces high-risk stock and applies a tier-decay markdown strategy (25%, 50%, 75%) to maximize product salvage recovery while freeing up labor hours for high-traffic customer waves.
+</p>
+<div style="margin-top: 1.5rem;">
+<a href="https://github.com/Abiola-Abioye/retail-rotation-optimization" target="_blank" class="btn" style="display: inline-block; background: #0f172a; color: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 0.9rem; margin-right: 1rem; font-family: inherit;">View Repository Source</a>
+</div>
+</div>
+<div class="project-card" style="border: 1px solid #e1e4e8; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; background-color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+<h3 style="color: #1e293b; margin-top: 0; font-family: inherit;">Employee Timesheet Data Warehouse — SCD Type 1 &amp; 2</h3>
+<div class="project-tags" style="margin-bottom: 1.5rem;">
+<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">SQL Server</span>
+<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Data Warehousing</span>
+<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Star Schema</span>
+<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; font-family: inherit;">ETL</span>
+</div>
+<p style="color: #475569; font-family: inherit;">
+<strong>The Business Problem:</strong> Employee records change over time — contact details update, employees change departments or get promoted — but historical timesheet data still needs to reflect the correct department and role for the day the work was actually done, not just an employee's current profile.
+</p>
+<p style="color: #475569; font-family: inherit;">
+<strong>The Solution:</strong> Built a staging-to-warehouse ETL pipeline in SQL Server around a star schema (<code style="background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace;">DimEmployee</code>, <code style="background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace;">FactTimesheet</code>). Implemented Slowly Changing Dimensions logic: Type 1 overwrites for low-impact fields like email and phone, and Type 2 versioning for department and job title changes — expiring the old record and inserting a new one with its own effective date range. Timesheet facts are then mapped to whichever employee version was active on the date the work occurred.
+</p>
+<p style="color: #475569; font-family: inherit;">
+<strong>Strategic Impact:</strong> The model preserves accurate point-in-time reporting instead of overwriting history. For example, the warehouse can correctly show that one employee's hours split 28.57% under her old department and 71.43% under her new one after a transfer — a distinction a simpler "current state only" table would erase entirely.
+</p>
+<div style="margin-top: 1.5rem;">
+<a href="https://github.com/Abiola-Abioye/employee-timesheet-scd-warehouse" target="_blank" class="btn" style="display: inline-block; background: #0f172a; color: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 0.9rem; margin-right: 1rem; font-family: inherit;">View Repository Source</a>
+</div>
+</div>
+</section>
+</div>
 </body>
 </html>
