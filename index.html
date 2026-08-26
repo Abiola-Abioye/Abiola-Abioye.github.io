@@ -4,180 +4,512 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abiola Abioye | Data Analytics Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
---primary: #2c3e50;
---accent: #18bc9c;
---light: #f8f9fa;
---dark: #333333;
-}
-body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-line-height: 1.6;
-color: var(--dark);
-margin: 0;
-padding: 0;
-}
-header {
-background: var(--primary);
-color: white;
-padding: 3rem 2rem;
-text-align: center;
-}
-header h1 { margin: 0; font-size: 2.5rem; }
-header p { margin: 0.5rem 0 0 0; font-size: 1.2rem; color: #ecf0f1; }
-.container {
-max-width: 1000px;
-margin: auto;
-padding: 2rem;
-}
-section { margin-bottom: 3rem; }
-h2 { border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; color: var(--primary); }
-.skills-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 1.5rem;
-margin-top: 1rem;
-}
-.skill-card {
-background: var(--light);
-padding: 1.5rem;
-border-radius: 6px;
-border-left: 4px solid var(--accent);
-}
-.skill-card h3 { margin-top: 0; color: var(--primary); }
-.project-card {
-background: white;
-border: 1px solid #e0e0e0;
-border-radius: 8px;
-padding: 2rem;
-margin-bottom: 2rem;
-box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-.project-tags { margin: 0.5rem 0; }
-.tag {
-background: #e8f8f5;
-color: var(--accent);
-padding: 0.2rem 0.6rem;
-border-radius: 4px;
-font-size: 0.85rem;
-font-weight: bold;
-margin-right: 0.5rem;
-}
-.btn {
-display: inline-block;
-background: var(--primary);
-color: white;
-text-decoration: none;
-padding: 0.5rem 1rem;
-border-radius: 4px;
-font-size: 0.9rem;
-margin-top: 1rem;
-transition: background 0.2s;
-}
-.btn:hover { background: var(--accent); }
+  :root {
+    --paper: #F6F2E8;
+    --paper-dim: #EEE8D8;
+    --card: #FFFEFA;
+    --ink: #201B15;
+    --muted: #746C5C;
+    --line: #DCD3BC;
+    --structure: #2A2340;
+    --structure-soft: #3E3560;
+    --highlight: #E85C82;
+    --highlight-ink: #8A1D42;
+    --highlight-soft: #FBE9EF;
+    --highlight-line: #F2C2D3;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.65;
+  }
+
+  a { color: inherit; }
+
+  ::selection {
+    background: var(--highlight);
+    color: var(--structure);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--highlight);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Cover ---------- */
+
+  .cover {
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        transparent, transparent 39px,
+        rgba(42,35,64,0.05) 39px, rgba(42,35,64,0.05) 40px
+      ),
+      var(--structure);
+    color: var(--paper);
+    padding: 4.5rem 2rem 3.5rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .cover-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--highlight);
+    margin: 0 0 1rem;
+  }
+
+  .cover h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    margin: 0 0 0.6rem;
+    letter-spacing: -0.01em;
+  }
+
+  .cover .tagline {
+    font-size: 1.1rem;
+    color: #D8D4E6;
+    margin: 0 0 1.75rem;
+  }
+
+  .stack-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .stack-strip span {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(232,92,130,0.45);
+    border-radius: 3px;
+    color: var(--paper);
+    background: rgba(232,92,130,0.1);
+  }
+
+  .credentials-line {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: #E9B9C9;
+    margin: 1.1rem 0 0;
+  }
+
+  .credentials-line a {
+    color: var(--highlight);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(232,92,130,0.5);
+  }
+
+  .credentials-line a:hover,
+  .credentials-line a:focus-visible {
+    border-bottom-color: var(--highlight);
+    color: #FBE9EF;
+  }
+
+  /* ---------- Nav ---------- */
+
+  nav.tabs {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--paper-dim);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0 1rem;
+  }
+
+  nav.tabs a {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 0.85rem 1.1rem 0.7rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  nav.tabs a:hover,
+  nav.tabs a:focus-visible {
+    color: var(--ink);
+    border-bottom-color: var(--highlight);
+  }
+
+  /* ---------- Layout ---------- */
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3.5rem 1.75rem;
+  }
+
+  section { margin-bottom: 4rem; }
+  section:last-child { margin-bottom: 0; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--highlight-ink);
+    margin: 0 0 0.5rem;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.65rem;
+    margin: 0 0 1.25rem;
+    color: var(--structure);
+  }
+
+  #about p {
+    max-width: 62ch;
+    color: #3A3527;
+  }
+
+  /* ---------- Skills ---------- */
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--highlight);
+    border-radius: 4px;
+    padding: 1.35rem 1.5rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(42,35,64,0.08);
+  }
+
+  .skill-card .field-tag {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+  }
+
+  .skill-card h3 {
+    font-family: var(--font-display);
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;
+    color: var(--structure);
+  }
+
+  .skill-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+
+  /* ---------- Project cards ---------- */
+
+  .project-card {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 0 var(--line);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(42,35,64,0.10);
+  }
+
+  .record-stamp {
+    position: absolute;
+    top: -10px;
+    right: 1.75rem;
+    background: var(--structure);
+    color: var(--highlight);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    transform: rotate(-3deg);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+  }
+
+  .project-card h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.35rem;
+    margin: 0.25rem 0 1rem;
+    color: var(--structure);
+    padding-right: 5rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    background: var(--highlight-soft);
+    color: var(--highlight-ink);
+    border: 1px solid var(--highlight-line);
+    padding: 0.25rem 0.65rem;
+    border-radius: 3px;
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+
+  .project-card p {
+    color: #3A3527;
+    margin: 0 0 1rem;
+  }
+
+  .project-card p:last-of-type { margin-bottom: 0; }
+
+  .project-card code {
+    background: var(--paper-dim);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+  }
+
+  .project-visuals {
+    margin: 1.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .project-visuals h5 {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .project-visuals img {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--line);
+    display: block;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--structure);
+    background: transparent;
+    border: 1.5px solid var(--structure);
+    padding: 0.55rem 1.1rem;
+    border-radius: 4px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .btn:hover,
+  .btn:focus-visible {
+    background: var(--structure);
+    color: var(--paper);
+  }
+
+  .btn::after {
+    content: "→";
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    background: var(--structure);
+    color: #B9B3CE;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 620px) {
+    .project-visuals { grid-template-columns: 1fr; }
+    .project-card h3 { padding-right: 0; }
+    .record-stamp { position: static; display: inline-block; transform: rotate(-2deg); margin-bottom: 0.75rem; }
+    nav.tabs { gap: 0; }
+    nav.tabs a { padding: 0.75rem 0.7rem; font-size: 0.72rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .project-card, .skill-card, nav.tabs a, .btn { transition: none; }
+    .project-card:hover, .skill-card:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
-<header>
-<h1>Abiola Abioye</h1>
-<p>Data Analyst | Transforming Complex Datasets into Actionable Insights</p>
+
+<header class="cover">
+  <p class="cover-eyebrow">Data Analytics Portfolio</p>
+  <h1>Abiola Abioye</h1>
+  <p class="tagline">Data Analyst | Transforming Complex Datasets into Actionable Insights</p>
+  <div class="stack-strip">
+    <span>SQL</span><span>Power BI</span><span>DAX</span><span>Python</span><span>Excel</span>
+  </div>
+  <p class="credentials-line">BSc Finance, University of Ilorin &nbsp;·&nbsp; ICAN Member &nbsp;·&nbsp; ACCA Member</p>
 </header>
+
+<nav class="tabs">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="https://www.linkedin.com/in/abiola-abioye" target="_blank" rel="noopener">LinkedIn ↗</a>
+</nav>
+
 <div class="container">
-<section id="about">
-<h2>About My Journey</h2>
-<p>Welcome to my data analytics project showcase. I specialize in bridging the gap between raw data complexity and clear business strategy. This timeline captures my technical progression, analytical builds, and practical implementations as I navigate my data analytics journey.</p>
-</section>
-<section id="skills">
-<h2>Technical Core</h2>
-<div class="skills-grid">
-<div class="skill-card">
-<h3>Data Modeling & Analytics</h3>
-<p>SQL, Python, Advanced Data Modeling, ETL Workflows</p>
+
+  <section id="about">
+    <p class="eyebrow">Overview</p>
+    <h2>About My Journey</h2>
+    <p>Welcome to my data analytics project showcase. I specialize in bridging the gap between raw data complexity and clear business strategy. This timeline captures my technical progression, analytical builds, and practical implementations as I navigate my data analytics journey.</p>
+  </section>
+
+  <section id="skills">
+    <p class="eyebrow">Stack</p>
+    <h2>Technical Core</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <span class="field-tag">field: modeling_analytics</span>
+        <h3>Data Modeling &amp; Analytics</h3>
+        <p>SQL, Python, Advanced Data Modeling, ETL Workflows</p>
+      </div>
+      <div class="skill-card">
+        <span class="field-tag">field: visualization_bi</span>
+        <h3>Visualization &amp; BI</h3>
+        <p>Power BI (DAX, Interactive Dashboards), Advanced Reporting</p>
+      </div>
+      <div class="skill-card">
+        <span class="field-tag">field: risk_compliance</span>
+        <h3>Risk &amp; Compliance</h3>
+        <p>Corporate Risk Assessment, Internal Controls, Control Environment Optimization</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <p class="eyebrow">Records</p>
+    <h2>Project Journey</h2>
+
+    <div class="project-card">
+      <span class="record-stamp">REC — 01</span>
+      <h3>Retail Inventory Automation &amp; Markdown Optimization</h3>
+      <div class="project-tags">
+        <span class="tag">Data Modeling</span>
+        <span class="tag">Python (pandas/numpy)</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">DAX Framework</span>
+      </div>
+      <p><strong>The Business Problem:</strong> Frontline retail teams routinely execute manual shelf-rotation checklists to catch expiring inventory. This process is time-intensive, prone to human oversight, and often collides with peak front-end checkout traffic, leading to lost productivity and increased waste (shrinkage).</p>
+      <p><strong>The Solution:</strong> Deployed a priority-driven, exception-based inventory tracking model. Engineered a custom 3-month retail transactional dataset using Python (<code>pandas</code>, <code>numpy</code>) and architected a highly scalable, normalized Star Schema database inside Power BI by abstracting a unique batch lookup dimension to break complex routing loops.</p>
+      <div class="project-visuals">
+        <div>
+          <h5>Relational Star Schema</h5>
+          <img src="https://raw.githubusercontent.com/Abiola-Abioye/retail-rotation-optimization/main/schema.png" alt="Star Schema Architecture">
+        </div>
+        <div>
+          <h5>Automated Operations UI</h5>
+          <img src="https://raw.githubusercontent.com/Abiola-Abioye/retail-rotation-optimization/main/dashboard.png" alt="Power BI Dashboard Picklist">
+        </div>
+      </div>
+      <p><strong>Strategic Impact:</strong> Completely replaces blind manual scanning with a predictive, targeted markdown picklist. By implementing automated time-intelligence thresholds, the dashboard surfaces high-risk stock and applies a tier-decay markdown strategy (25%, 50%, 75%) to maximize product salvage recovery while freeing up labor hours for high-traffic customer waves.</p>
+      <a href="https://github.com/Abiola-Abioye/retail-rotation-optimization" target="_blank" class="btn">View Repository Source</a>
+    </div>
+
+    <div class="project-card">
+      <span class="record-stamp">REC — 02</span>
+      <h3>Employee Timesheet Data Warehouse — SCD Type 1 &amp; 2</h3>
+      <div class="project-tags">
+        <span class="tag">SQL Server</span>
+        <span class="tag">Data Warehousing</span>
+        <span class="tag">Star Schema</span>
+        <span class="tag">ETL</span>
+      </div>
+      <p><strong>The Business Problem:</strong> Employee records change over time — contact details update, employees change departments or get promoted — but historical timesheet data still needs to reflect the correct department and role for the day the work was actually done, not just an employee's current profile.</p>
+      <p><strong>The Solution:</strong> Built a staging-to-warehouse ETL pipeline in SQL Server around a star schema (<code>DimEmployee</code>, <code>FactTimesheet</code>). Implemented Slowly Changing Dimensions logic: Type 1 overwrites for low-impact fields like email and phone, and Type 2 versioning for department and job title changes — expiring the old record and inserting a new one with its own effective date range. Timesheet facts are then mapped to whichever employee version was active on the date the work occurred.</p>
+      <p><strong>Strategic Impact:</strong> The model preserves accurate point-in-time reporting instead of overwriting history. For example, the warehouse can correctly show that one employee's hours split 28.57% under her old department and 71.43% under her new one after a transfer — a distinction a simpler "current state only" table would erase entirely.</p>
+      <a href="https://github.com/Abiola-Abioye/employee-timesheet-scd-warehouse" target="_blank" class="btn">View Repository Source</a>
+    </div>
+
+    <div class="project-card">
+      <span class="record-stamp">REC — 03</span>
+      <h3>Financial Planning &amp; Forecasting Model — NaturaGlow</h3>
+      <div class="project-tags">
+        <span class="tag">Excel</span>
+        <span class="tag">Goal Seek</span>
+        <span class="tag">Scenario Analysis</span>
+        <span class="tag">Forecasting</span>
+      </div>
+      <p><strong>The Business Problem:</strong> NaturaGlow needed to know whether a new product line would be profitable before committing to it — but the answer depended heavily on volatile assumptions like unit price and expected sales volume, and a colleague's early sales estimate hadn't yet been checked against actual historical trends.</p>
+      <p><strong>The Solution:</strong> Built a dynamic financial model in Excel with base-case profit and break-even calculations, then used Goal Seek to solve backward for the unit price and sales volume needed to hit specific profit targets. Layered in a two-variable sensitivity data table to stress-test profit against simultaneous swings in price and volume, and used Scenario Manager to compare Pessimistic, Most Likely, and Optimistic outcomes across two pricing tiers. Cross-checked all of it against a 5-year historical sales trendline forecast.</p>
+      <p><strong>Strategic Impact:</strong> The base case revealed a projected $5,000 loss, with break-even actually requiring 1,250 units sold monthly. Goal Seek showed a $70 price point (up from a $50 base) would hit a $15,000 profit target, while at the base price, 2,250 units would be needed for a $20,000 profit. Scenario analysis found only the Most Likely High ($27,120) and Optimistic High ($31,880) scenarios cleared a $25,000 profit bar. The trendline forecast also showed a colleague's initial 1,000-unit sales estimate was overly conservative against the model's 1,303-unit "Most Likely" projection — meaning the business was positioned to outperform their planning baseline by over 30%.</p>
+    </div>
+
+  </section>
+
 </div>
-<div class="skill-card">
-<h3>Visualization & BI</h3>
-<p>Power BI (DAX, Interactive Dashboards), Advanced Reporting</p>
-</div>
-<div class="skill-card">
-<h3>Risk & Compliance</h3>
-<p>Corporate Risk Assessment, Internal Controls, Control Environment Optimization</p>
-</div>
-</div>
-</section>
-<section id="projects">
-<h2>Project Journey</h2>
-<div class="project-card" style="border: 1px solid #e1e4e8; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; background-color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-<h3 style="color: #1e293b; margin-top: 0; font-family: inherit;">Retail Inventory Automation & Markdown Optimization</h3>
-<div class="project-tags" style="margin-bottom: 1.5rem;">
-<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Data Modeling</span>
-<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Python(pandas/numpy)</span>
-<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Power BI</span>
-<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; font-family: inherit;">DAX Framework</span>
-</div>
-<p style="color: #475569; font-family: inherit;">
-<strong>The Business Problem:</strong> Frontline retail teams routinely execute manual shelf-rotation checklists to catch expiring inventory. This process is time-intensive, prone to human oversight, and often collides with peak front-end checkout traffic, leading to lost productivity and increased waste (shrinkage).
-</p>
-<p style="color: #475569; font-family: inherit;">
-<strong>The Solution:</strong> Deployed a priority-driven, exception-based inventory tracking model. Engineered a custom 3-month retail transactional dataset using Python (<code style="background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace;">pandas</code>, <code style="background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace;">numpy</code>) and architected a highly scalable, normalized Star Schema database inside Power BI by abstracting a unique batch lookup dimension to break complex routing loops.
-</p>
-<div class="project-visuals" style="margin: 1.5rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-family: inherit;">
-<div>
-<h5 style="margin: 0 0 0.5rem 0; color: #64748b; font-family: inherit;">Relational Star Schema</h5>
-<img src="https://raw.githubusercontent.com/Abiola-Abioye/retail-rotation-optimization/main/schema.png" alt="Star Schema Architecture" style="width: 100%; border-radius: 6px; border: 1px solid #cbd5e1;">
-</div>
-<div>
-<h5 style="margin: 0 0 0.5rem 0; color: #64748b; font-family: inherit;">Automated Operations UI</h5>
-<img src="https://raw.githubusercontent.com/Abiola-Abioye/retail-rotation-optimization/main/dashboard.png" alt="Power BI Dashboard Picklist" style="width: 100%; border-radius: 6px; border: 1px solid #cbd5e1;">
-</div>
-</div>
-<p style="color: #475569; font-family: inherit;">
-<strong>Strategic Impact:</strong> Completely replaces blind manual scanning with a predictive, targeted markdown picklist. By implementing automated time-intelligence thresholds, the dashboard surfaces high-risk stock and applies a tier-decay markdown strategy (25%, 50%, 75%) to maximize product salvage recovery while freeing up labor hours for high-traffic customer waves.
-</p>
-<div style="margin-top: 1.5rem;">
-<a href="https://github.com/Abiola-Abioye/retail-rotation-optimization" target="_blank" class="btn" style="display: inline-block; background: #0f172a; color: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 0.9rem; margin-right: 1rem; font-family: inherit;">View Repository Source</a>
-</div>
-</div>
-<div class="project-card" style="border: 1px solid #e1e4e8; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; background-color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-<h3 style="color: #1e293b; margin-top: 0; font-family: inherit;">Employee Timesheet Data Warehouse — SCD Type 1 &amp; 2</h3>
-<div class="project-tags" style="margin-bottom: 1.5rem;">
-<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">SQL Server</span>
-<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Data Warehousing</span>
-<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Star Schema</span>
-<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; font-family: inherit;">ETL</span>
-</div>
-<p style="color: #475569; font-family: inherit;">
-<strong>The Business Problem:</strong> Employee records change over time, contact details update, employees change departments or get promoted but historical timesheet data still needs to reflect the correct department and role for the day the work was actually done, not just an employee's current profile.
-</p>
-<p style="color: #475569; font-family: inherit;">
-<strong>The Solution:</strong> Built a staging-to-warehouse ETL pipeline in SQL Server around a star schema (<code style="background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace;">DimEmployee</code>, <code style="background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace;">FactTimesheet</code>). Implemented Slowly Changing Dimensions logic: Type 1 overwrites for low-impact fields like email and phone, and Type 2 versioning for department and job title changes, expiring the old record and inserting a new one with its own effective date range. Timesheet facts are then mapped to whichever employee version was active on the date the work occurred.
-</p>
-<p style="color: #475569; font-family: inherit;">
-<strong>Strategic Impact:</strong> The model preserves accurate point-in-time reporting instead of overwriting history. For example, the warehouse can correctly show that one employee's hours split 28.57% under her old department and 71.43% under her new one after a transfer, a distinction a simpler "current state only" table would erase entirely.
-</p>
-<div style="margin-top: 1.5rem;">
-<a href="https://github.com/Abiola-Abioye/employee-timesheet-scd-warehouse" target="_blank" class="btn" style="display: inline-block; background: #0f172a; color: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 0.9rem; margin-right: 1rem; font-family: inherit;">View Repository Source</a>
-</div>
-</div>
-<div class="project-card" style="border: 1px solid #e1e4e8; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; background-color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-<h3 style="color: #1e293b; margin-top: 0; font-family: inherit;">Financial Planning &amp; Forecasting Model — NaturaGlow</h3>
-<div class="project-tags" style="margin-bottom: 1.5rem;">
-<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Excel</span>
-<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Goal Seek</span>
-<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-right: 0.5rem; font-family: inherit;">Scenario Analysis</span>
-<span class="tag" style="background: #e2e8f0; color: #475569; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; font-family: inherit;">Forecasting</span>
-</div>
-<p style="color: #475569; font-family: inherit;">
-<strong>The Business Problem:</strong> NaturaGlow needed to know whether a new product line would be profitable before committing to it but the answer depended heavily on volatile assumptions like unit price and expected sales volume, and a colleague's early sales estimate hadn't yet been checked against actual historical trends.
-</p>
-<p style="color: #475569; font-family: inherit;">
-<strong>The Solution:</strong> Built a dynamic financial model in Excel with base-case profit and break-even calculations, then used Goal Seek to solve backward for the unit price and sales volume needed to hit specific profit targets. Layered in a two-variable sensitivity data table to stress-test profit against simultaneous swings in price and volume, and used Scenario Manager to compare Pessimistic, Most Likely, and Optimistic outcomes across two pricing tiers. Cross-checked all of it against a 5-year historical sales trendline forecast.
-</p>
-<p style="color: #475569; font-family: inherit;">
-<strong>Strategic Impact:</strong> The base case revealed a projected $5,000 loss, with break-even actually requiring 1,250 units sold monthly. Goal Seek showed a $70 price point (up from a $50 base) would hit a $15,000 profit target, while at the base price, 2,250 units would be needed for a $20,000 profit. Scenario analysis found only the Most Likely High ($27,120) and Optimistic High ($31,880) scenarios cleared a $25,000 profit bar. The trendline forecast also showed a colleague's initial 1,000-unit sales estimate was overly conservative against the model's 1,303-unit "Most Likely" projection, meaning the business was positioned to outperform their planning baseline by over 30%.
-</p>
-</div>
-</section>
-</div>
+
+<footer>
+  Built record by record — data analytics portfolio, maintained on GitHub Pages.
+</footer>
+
 </body>
 </html>
