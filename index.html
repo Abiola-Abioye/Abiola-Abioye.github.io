@@ -482,9 +482,9 @@
         <span class="tag">Star Schema</span>
         <span class="tag">ETL</span>
       </div>
-      <p><strong>The Business Problem:</strong> Employee records change over time — contact details update, employees change departments or get promoted — but historical timesheet data still needs to reflect the correct department and role for the day the work was actually done, not just an employee's current profile.</p>
-      <p><strong>The Solution:</strong> Built a staging-to-warehouse ETL pipeline in SQL Server around a star schema (<code>DimEmployee</code>, <code>FactTimesheet</code>). Implemented Slowly Changing Dimensions logic: Type 1 overwrites for low-impact fields like email and phone, and Type 2 versioning for department and job title changes — expiring the old record and inserting a new one with its own effective date range. Timesheet facts are then mapped to whichever employee version was active on the date the work occurred.</p>
-      <p><strong>Strategic Impact:</strong> The model preserves accurate point-in-time reporting instead of overwriting history. For example, the warehouse can correctly show that one employee's hours split 28.57% under her old department and 71.43% under her new one after a transfer — a distinction a simpler "current state only" table would erase entirely.</p>
+      <p><strong>The Business Problem:</strong> Employee records change over time, contact details update, employees change departments or get promoted, but historical timesheet data still needs to reflect the correct department and role for the day the work was actually done, not just an employee's current profile.</p>
+      <p><strong>The Solution:</strong> Built a staging-to-warehouse ETL pipeline in SQL Server around a star schema (<code>DimEmployee</code>, <code>FactTimesheet</code>). Implemented Slowly Changing Dimensions logic: Type 1 overwrites for low-impact fields like email and phone, and Type 2 versioning for department and job title changes, expiring the old record and inserting a new one with its own effective date range. Timesheet facts are then mapped to whichever employee version was active on the date the work occurred.</p>
+      <p><strong>Strategic Impact:</strong> The model preserves accurate point-in-time reporting instead of overwriting history. For example, the warehouse can correctly show that one employee's hours split 28.57% under her old department and 71.43% under her new one after a transfer, a distinction a simpler "current state only" table would erase entirely.</p>
       <a href="https://github.com/Abiola-Abioye/employee-timesheet-scd-warehouse" target="_blank" class="btn">View Repository Source</a>
     </div>
 
@@ -497,9 +497,24 @@
         <span class="tag">Scenario Analysis</span>
         <span class="tag">Forecasting</span>
       </div>
-      <p><strong>The Business Problem:</strong> NaturaGlow needed to know whether a new product line would be profitable before committing to it — but the answer depended heavily on volatile assumptions like unit price and expected sales volume, and a colleague's early sales estimate hadn't yet been checked against actual historical trends.</p>
+      <p><strong>The Business Problem:</strong> NaturaGlow needed to know whether a new product line would be profitable before committing to it, but the answer depended heavily on volatile assumptions like unit price and expected sales volume, and a colleague's early sales estimate hadn't yet been checked against actual historical trends.</p>
       <p><strong>The Solution:</strong> Built a dynamic financial model in Excel with base-case profit and break-even calculations, then used Goal Seek to solve backward for the unit price and sales volume needed to hit specific profit targets. Layered in a two-variable sensitivity data table to stress-test profit against simultaneous swings in price and volume, and used Scenario Manager to compare Pessimistic, Most Likely, and Optimistic outcomes across two pricing tiers. Cross-checked all of it against a 5-year historical sales trendline forecast.</p>
-      <p><strong>Strategic Impact:</strong> The base case revealed a projected $5,000 loss, with break-even actually requiring 1,250 units sold monthly. Goal Seek showed a $70 price point (up from a $50 base) would hit a $15,000 profit target, while at the base price, 2,250 units would be needed for a $20,000 profit. Scenario analysis found only the Most Likely High ($27,120) and Optimistic High ($31,880) scenarios cleared a $25,000 profit bar. The trendline forecast also showed a colleague's initial 1,000-unit sales estimate was overly conservative against the model's 1,303-unit "Most Likely" projection — meaning the business was positioned to outperform their planning baseline by over 30%.</p>
+      <p><strong>Strategic Impact:</strong> The base case revealed a projected $5,000 loss, with break-even actually requiring 1,250 units sold monthly. Goal Seek showed a $70 price point (up from a $50 base) would hit a $15,000 profit target, while at the base price, 2,250 units would be needed for a $20,000 profit. Scenario analysis found only the Most Likely High ($27,120) and Optimistic High ($31,880) scenarios cleared a $25,000 profit bar. The trendline forecast also showed a colleague's initial 1,000-unit sales estimate was overly conservative against the model's 1,303-unit "Most Likely" projection, meaning the business was positioned to outperform their planning baseline by over 30%.</p>
+    </div>
+
+    <div class="project-card">
+      <span class="record-stamp">REC — 04</span>
+      <h3>Predictive Analytics for Customer Retention — Telco Churn (MLR &amp; kNN in R)</h3>
+      <div class="project-tags">
+        <span class="tag">R</span>
+        <span class="tag">Multiple Linear Regression</span>
+        <span class="tag">kNN</span>
+        <span class="tag">CRISP-DM</span>
+      </div>
+      <p><strong>The Business Problem:</strong> In the telecom sector, acquiring a new subscriber costs significantly more than retaining an existing one. The business needed a way to forecast expected customer revenue and flag at-risk accounts before they cancel, using a dataset of 7,043 customer billing and service records.</p>
+      <p><strong>The Solution:</strong> Completed with teammates Prutha Chokshi and Samuel Aduaka as part of SAIT's Data Analytics program. Followed the CRISP-DM framework end to end: ran a 5W1H stakeholder analysis to align the Finance and Retention teams around "revenue leakage," then cleaned and encoded the dataset in R, removing 11 incomplete billing records, binary-encoding churn status, and mapping contract length to an ordinal scale. Built two models to answer two business questions: a Multiple Linear Regression predicting a customer's total lifetime billing from tenure and monthly charges, and a kNN-based visual clustering approach segmenting customers by churn risk across those same two variables.</p>
+      <p><strong>Strategic Impact:</strong> The regression model confirmed tenure and monthly charges as highly significant predictors of total revenue (p &lt; 0.001), supporting an early-warning system for accounts whose predicted and actual billing diverge. The churn analysis isolated a clear high-risk segment, customers paying over $75/month with less than 20 months of tenure, concentrated among month-to-month contract holders, versus a stable "loyalty zone" beyond 30 months of tenure. These findings led to two concrete recommendations: proactive loyalty offers for high-bill customers within their first year of service, and contract-upgrade incentives to shift month-to-month subscribers toward annual plans.</p>
+      <a href="https://github.com/Abiola-Abioye/telco-churn-predictive-analytics" target="_blank" class="btn">View Repository Source</a>
     </div>
 
   </section>
