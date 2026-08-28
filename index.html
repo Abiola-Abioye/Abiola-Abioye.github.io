@@ -449,7 +449,22 @@
     <h2>Project Journey</h2>
 
     <div class="project-card">
-      <span class="record-stamp">REC — 01</span>
+      <span class="record-stamp">REC-01</span>
+      <h3>Solar Energy Potential Analysis Across Alberta, ML, PV Simulation &amp; Power BI</h3>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Random Forest</span>
+        <span class="tag">pvlib</span>
+        <span class="tag">Power BI</span>
+      </div>
+      <p><strong>The Business Problem:</strong> Alberta has strong but geographically and seasonally variable solar resources, but raw hourly weather-station data isn't directly usable by non-technical decision-makers. Framed around a client (the Alberta Utilities Commission), the project needed to turn station-level irradiance data into city comparisons, predictive evidence, installation-level yield estimates, financial payback ranges, and long-term trend information for regulators, municipalities, and solar developers.</p>
+      <p><strong>The Solution:</strong> Completed with teammates Samuel Aduaka and Prutha Chokshi. Built a full Python pipeline across seven notebooks: cleaned and validated 701,280 hourly weather records (1998-2017) across four Alberta cities alongside over a million raw SAIT campus solar readings, engineered cyclical time features (hour and day-of-year sine/cosine encoding) plus geographic and meteorological predictors, then trained and tuned a Random Forest model on a chronological train/validation/test split to predict hourly solar irradiance without temporal leakage. Simulated panel-tilt optimization and annual energy yield using the physics-based <code>pvlib</code> library, modeled simple payback under best/base/worst financial scenarios, and tested for statistically significant long-term irradiance trends with Mann-Kendall testing. Surfaced the results through a four-page Power BI dashboard for city comparisons, seasonal patterns, and payback economics.</p>
+      <p><strong>Strategic Impact:</strong> The tuned Random Forest model exceeded the project's target of R² ≥ 0.85, reaching R² = 0.9169 on held-out test data (MAE 36.6 Wh/m², RMSE 69.5 Wh/m²), with all four cities individually clearing R² > 0.90. Optimized fixed panel tilt ranged from 39° to 42° across cities, with Lethbridge showing both the highest annual solar resource (1,687.64 kWh/m²/year) and the shortest base-case payback (13.23 years). Edmonton was the only city with a statistically significant increasing irradiance trend across the two-decade record (p = 0.023). Since the historical weather data ended in 2017 while usable SAIT campus solar readings only began in 2019, the team built a climatological consistency check instead of a false direct validation, comparing normalized seasonal/diurnal profiles between the two datasets and finding a strong Pearson correlation of r = 0.9686.</p>
+      <a href="https://github.com/Abiola-Abioye/alberta-solar-potential-analysis" target="_blank" class="btn">View Repository Source</a>
+    </div>
+
+    <div class="project-card">
+      <span class="record-stamp">REC-02</span>
       <h3>Retail Inventory Automation &amp; Markdown Optimization</h3>
       <div class="project-tags">
         <span class="tag">Data Modeling</span>
@@ -474,8 +489,8 @@
     </div>
 
     <div class="project-card">
-      <span class="record-stamp">REC — 02</span>
-      <h3>Employee Timesheet Data Warehouse — SCD Type 1 &amp; 2</h3>
+      <span class="record-stamp">REC-03</span>
+      <h3>Employee Timesheet Data Warehouse, SCD Type 1 &amp; 2</h3>
       <div class="project-tags">
         <span class="tag">SQL Server</span>
         <span class="tag">Data Warehousing</span>
@@ -489,8 +504,8 @@
     </div>
 
     <div class="project-card">
-      <span class="record-stamp">REC — 03</span>
-      <h3>Financial Planning &amp; Forecasting Model — NaturaGlow</h3>
+      <span class="record-stamp">REC-04</span>
+      <h3>Financial Planning &amp; Forecasting Model, NaturaGlow</h3>
       <div class="project-tags">
         <span class="tag">Excel</span>
         <span class="tag">Goal Seek</span>
@@ -503,8 +518,8 @@
     </div>
 
     <div class="project-card">
-      <span class="record-stamp">REC — 04</span>
-      <h3>Predictive Analytics for Customer Retention — Telco Churn (MLR &amp; kNN in R)</h3>
+      <span class="record-stamp">REC-05</span>
+      <h3>Predictive Analytics for Customer Retention, Telco Churn (MLR &amp; kNN in R)</h3>
       <div class="project-tags">
         <span class="tag">R</span>
         <span class="tag">Multiple Linear Regression</span>
@@ -518,8 +533,8 @@
     </div>
 
     <div class="project-card">
-      <span class="record-stamp">REC — 05</span>
-      <h3>IBM Attrition Analytics — AI-Powered Retention Strategy</h3>
+      <span class="record-stamp">REC-06</span>
+      <h3>IBM Attrition Analytics, AI-Powered Retention Strategy</h3>
       <div class="project-tags">
         <span class="tag">Power BI</span>
         <span class="tag">DAX</span>
@@ -528,7 +543,7 @@
       </div>
       <p><strong>The Business Problem:</strong> Employee attrition is a costly, disruptive problem, it drives up recruitment and training costs, breaks team continuity, and often signals deeper issues around compensation, workload, or career growth. HR needed to know which employees were most likely to leave, and why, in time to act proactively rather than reactively.</p>
       <p><strong>The Solution:</strong> Built an interactive Power BI report following the CRISP-DM methodology on the IBM HR Analytics Employee Attrition dataset (1,470 employees, 35 attributes). Cleaned the data and built a star-schema model, a central Employee fact table joined to Rating Scale Lookup, Age Band, and Department dimensions, then authored DAX measures including Attrition Rate, Average Monthly Income, and a custom Flight Risk indicator. Layered in Power BI's AI-powered visuals, Key Influencers to automatically rank the strongest drivers of attrition, and a Decomposition Tree for interactive top-down drill-through, across three report pages with full cross-filtering and conditional formatting.</p>
-      <p><strong>Strategic Impact:</strong> The analysis found Sales Representatives at a 39.8% attrition rate, more than double the next-highest role and employees who work overtime roughly 3× more likely to leave. Leavers earned 30% less on average than stayers within the same job level ($4,787 vs. $6,833 monthly), and low work-life balance nearly doubled attrition risk (31.2% vs. 14.2%). Career stagnation proved non-linear: employees in their first two years in a role were 3.5× more likely to leave than 11+ year veterans. The report flagged 39 employees as high flight risk against an estimated $5.4M in annual attrition-related costs, translating into five targeted recommendations, from a Sales overtime audit to a structured onboarding track and a pay-equity review.</p>
+      <p><strong>Strategic Impact:</strong> The analysis found Sales Representatives at a 39.8% attrition rate, more than double the next-highest role, and employees who work overtime roughly 3× more likely to leave. Leavers earned 30% less on average than stayers within the same job level ($4,787 vs. $6,833 monthly), and low work-life balance nearly doubled attrition risk (31.2% vs. 14.2%). Career stagnation proved non-linear: employees in their first two years in a role were 3.5× more likely to leave than 11+ year veterans. The report flagged 39 employees as high flight risk against an estimated $5.4M in annual attrition-related costs, translating into five targeted recommendations, from a Sales overtime audit to a structured onboarding track and a pay-equity review.</p>
       <a href="https://github.com/Abiola-Abioye/ibm-attrition-analytics" target="_blank" class="btn">View Repository Source</a>
     </div>
 
@@ -537,7 +552,7 @@
 </div>
 
 <footer>
-  Built record by record — data analytics portfolio, maintained on GitHub Pages.
+  Built record by record, data analytics portfolio, maintained on GitHub Pages.
 </footer>
 
 </body>
